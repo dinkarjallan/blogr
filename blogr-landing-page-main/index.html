@@ -7,6 +7,9 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- bulma CDN file -->
+
+  <!-- custom stylesheet -->
   <link rel="stylesheet" href="./style.css">
 
   <title>Blogr</title>
@@ -14,13 +17,17 @@
 
 <body>
   <header class="header">
-    <nav class="navbar">
-      <div id="logo">
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <img src="./images/logo.svg" alt="logo">
+      </div>
+      <div class="menu">
+        <img src="./images/icon-hamburger.svg" alt="menu button">
       </div>
       <div class="dropdown">
         <button class="dropbtn">Product</button>
-        <div class="dropdown-content">
+        <div class="dropdown-content hidden">
           <a href="#">Overview</a>
           <a href="#">Pricing</a>
           <a href="#">Marketplace</a>
@@ -30,7 +37,7 @@
       </div>
       <div class="dropdown">
         <button class="dropbtn">Company</button>
-        <div class="dropdown-content">
+        <div class="dropdown-content hidden">
           <a href="#">About</a>
           <a href="#">Team</a>
           <a href="#">Blog</a>
@@ -39,7 +46,7 @@
       </div>
       <div class="dropdown">
         <button class="dropbtn">Connect</button>
-        <div class="dropdown-content">
+        <div class="dropdown-content hidden">
           <a href="#">Contact</a>
           <a href="#">Newsletter</a>
           <a href="#">LinkedIn</a>
