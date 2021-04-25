@@ -1,5 +1,51 @@
+/* NOTE: this is a mobile first CSS stylesheet written to go from mobile screen size to larger sizes */
+/* removing basic styles */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* header styles */
+.header{
+  background-image:  linear-gradient( to right, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+
+}
+.menu{
+  display:none;
+}
+.navbar{
+  height: 90vh;
+  background-image: url(./images/bg-pattern-intro.svg);
+  background-position: center;
+  background-size: 50em;
+  background-repeat: no-repeat;
+}
+#hero{
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
 
 
+/* dropdown buttons */
+.hidden{
+  display: none;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  z-index: 1;
+}
+.dropdown-content a{
+  display: block;
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  color:black;
+  text-align: left;
+}
 
 
 
