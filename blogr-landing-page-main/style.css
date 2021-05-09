@@ -1,72 +1,374 @@
-/* NOTE: this is a mobile first CSS stylesheet written to go from mobile screen size to larger sizes */
-/* removing basic styles */
+:root{
+  --light-red: hsl(356, 100%, 66%);
+  --very-light-red: hsl(355, 100%, 74%);
+  --very-dark-blue: hsl(208, 49%, 24%);
+  --grayish-blue: hsl(240, 2%, 79%);
+  --very-dark-grayish-blue: hsl(207, 13%, 34%);
+  --very-dark-black-blue: hsl(240, 10%, 16%);
+  --very-light-red-gradient: hsl(13, 100%, 72%);
+  --light-red-gradient: hsl(353, 100%, 62%);
+  --very-dark-gray-blue: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue: hsl(237, 23%, 32%);
+}
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  outline: none;
 }
-/* header styles */
-.header{
-  background-image:  linear-gradient( to right, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
-
+section{
+  text-align: center;
 }
-.menu{
-  display:none;
+h1,h2,p{
+  font-family: 'Overpass', sans-serif;
 }
-.navbar{
-  height: 90vh;
-  background-image: url(./images/bg-pattern-intro.svg);
-  background-position: center;
-  background-size: 50em;
-  background-repeat: no-repeat;
+/* HOME */
+.home{ 
+  background-image: url(images/bg-pattern-intro.svg), linear-gradient(145deg, var(--very-light-red-gradient) 0%, var(--light-red-gradient) 70%);
+  background-position: 35% 40%;
+  background-size: 1200px 1200px;
+  border-radius: 0 0 0 5rem;
+  color: white;
 }
-#hero{
-  position: relative;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+.home .header{
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 5vw;
 }
-
-
-/* dropdown buttons */
-.hidden{
+.home .header .logo{
+  height:40px;
+  width:101px;
+}
+.home .header .menu-icon-label{
+  align-self: center;
+  height:18px;
+  width:32px;
+}
+.home .header .menu-icon{
   display: none;
 }
+.home nav{
+  display: none;
+}
+.home .txt{
+  padding: 5vh 12vw;
+}
+.home h1{
+  font-size: 2rem;
+}
+.home button{
+  border: 1px solid white;
+  border-radius: 2rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  margin: 5vh 3vw 10vh;
+  padding: .8rem;
+}
+.home button:hover{
+  cursor: pointer;
+}
+.home .solid-button{
+  background-color: white;
+  color: var(--light-red);
+  transition: all 200ms ease-in-out;
+}
+.home .solid-button:hover{
+  border: var(--very-light-red);
+  background-color: var(--very-light-red);
+  color: white;
+}
+.home .login-button{
+  background-color: white;
+  color: var(--very-dark-blue);
+  padding: .8rem 1.5rem;
+  margin-bottom: 0;
+  max-height: 3rem;
+}
+.home .signup-button{
+  background: linear-gradient(145deg, var(--very-light-red-gradient) 0%, var(--light-red-gradient) 70%);
+  color: white;
+  padding: .8rem 1.5rem;
+  margin-top: .7rem;
+  margin-bottom: 0;
+  max-height: 3rem;
+}
+.home .border-button{
+  background: none;
+  color: white;
+}
+.home .border-button:hover{
+  background-color: white;
+  color: var(--light-red);
+}
+.home .close{
+  display: none;
+}
+
+/* LIGHT SECTION */
+.light-section h2{
+  color: var(--very-dark-blue);
+  padding: 2vh 15vw;
+  margin: 5vh 0 0;
+}
+.light-section p{
+  padding: 1vh 10vw;
+  line-height: 1.5;
+}
+.light-section .for-phone{
+  margin-bottom: 20vh;
+}
+.light-section .editor-img{
+  background-image: url(images/illustration-editor-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  height: 40vh;
+  width: 40vh;
+}
+.light-section .laptop{
+  background-image: url(images/illustration-laptop-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  height: 30vh;
+  width: 40vh;
+}
+
+.dark-section{
+  background-color: var(--very-dark-gray-blue);
+  background-image: url(images/bg-pattern-circles.svg);
+  background-position: -5rem -15rem;
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  border-radius: 0 5rem 0 0rem;
+  color: white;
+  margin-top: 45%;
+}
+.dark-section .phone, .dark-section h2, .dark-section p{
+  position: relative;
+  bottom: 170px;
+}
+.dark-section .phone{
+  background-image: url(images/illustration-phones.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 10% auto;
+  height: 45vh;
+  width: 45vh;
+}
+.dark-section h2{
+  padding: 2vh 15vw;
+}
+.dark-section p{
+  padding: 1vh 10vw;
+  line-height: 1.5;
+}
+
+footer{
+  background-color: var(--very-dark-black-blue);
+  border-radius: 0 5rem 0 0;
+  text-align: center;
+}
+footer object{
+  padding: 4vh 0;
+}
+footer .category{
+  color:white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ubuntu', sans-serif;
+  justify-content: space-evenly;
+  padding: 2vh 0;
+}
+footer .category *{
+  padding: 1vh 0;
+}
+footer .category a{
+  color:var(--grayish-blue);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+
+/* DROPDOWM LIST MOBILE */
+.menu-icon:checked + label .hamburguer{
+  display: none;
+}
+.menu-icon:checked + label .close{
+  display: block;
+}
+.menu-icon:checked ~ nav{
+  display: block;
+}
+nav{
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  overflow: hidden;
+  padding: 1rem;
+  position:absolute;
+  top: 5.5rem;
+  left: 20vw;
+  width: 60vw;
+}
+nav .dropdown{
+  overflow: hidden;
+}
+nav .dropdown .dropbtn{
+  background-color: inherit;
+  border: none;
+  color: var(--very-dark-black-blue);
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;  
+  margin: 4px;
+  outline: none;
+  padding: 14px 16px;
+}
+nav .dropdown .dropbtn::after{
+  display: inline-block;
+  content: url(images/icon-arrow-dark.svg);
+  padding: 0 1vw;
+}
+nav .dropdown .dropbtn:hover::after{
+  transform: rotate(180deg);
+}
 .dropdown-content {
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
+  background-color: var(--grayish-blue);
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  font-family: 'Overpass', sans-serif;
+  font-size: 13px;
+  min-width: 160px;
   z-index: 1;
 }
 .dropdown-content a{
-  display: block;
-  float: none;
+  color: var(--very-dark-grayish-blue);
   padding: 12px 16px;
   text-decoration: none;
-  color:black;
-  text-align: left;
+  display: block;
+  text-align: center;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
 }
 
+@media screen and (min-width:720px) {
+
+  .home{
+      background-image: url(images/bg-pattern-intro.svg), linear-gradient(90deg, var(--very-light-red-gradient) 10%, var(--light-red-gradient) 60%);
+      background-position: 20% 50%;
+      background-size: 2500px 2500px;
+  }
+  .home .header .menu-icon-label{
+      display: none;
+  }
+  .home nav{
+      align-items: flex-start;
+      background: none;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+  }
+  .home .nav-menu{
+      display: flex;
+  }
+  .home .dropdown .dropbtn{
+      color: white;
+      min-width: 160px;
+  }
+  .home .dropdown .dropbtn::after{
+      content: url(images/icon-arrow-light.svg);
+  }
+  .home .login-button, .home .signup-button{
+      margin:0 7px;
+  }
+  .home .signup-button{
+      background: white;
+      color: var(--light-red);
+  }
+  .home .login-button{
+      background: none;
+      border: none;
+      color: white;
+  }
+  .home nav hr{
+      display: none;
+  }
 
 
+  .light-section .editor-img{
+      background-image: url(images/illustration-editor-desktop.svg);
+      background-position: 10rem;
+      background-size: 700px;
+      float: right;
+      min-height: 60vw;
+      min-width: 50vw;
+      position: relative;
+      bottom: 7rem;
+  }
+  .light-section .item-float{
+      text-align:left;
+  }
 
+  .dark-section{
+      max-height: 30vw;
+      min-width: 90vw;
+      display: flex;
+      margin:0;
+  }
+  .dark-section h2, .dark-section p{
+      align-self:center;
+      padding: 0;
+      text-align: left;
+      position: static;
+  }
+  .dark-section .phone-text{
+      align-self: center;
+  }
+  .dark-section .phone{
+      
+      margin-left: 3rem;
+      width: 50vw;
+  }
 
+  .light-section .laptop{
+      background-image: url(images/illustration-laptop-desktop.svg);
+      background-position: -10rem 0%;
+      background-size: 700px;
+      float: left;
+      min-height: 100vh;
+      min-width: 50vw;
+  }
+  .light-section .float-laptop{
+      padding: 0;
+      margin: 6vw 0 6vw;
+  }
 
+  footer{
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+  }
 
-
-
-
+}
 
 
 
 
 
 /* styles by Frontend Mentor */
-.attribution {
+/* .attribution {
       font-size: 11px;
       text-align: center;
     }
 
     .attribution a {
       color: hsl(228, 45%, 44%);
-    }
+    } */
